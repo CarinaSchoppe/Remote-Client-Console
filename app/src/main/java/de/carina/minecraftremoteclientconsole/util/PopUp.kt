@@ -13,11 +13,15 @@ object PopUp {
     lateinit var activeActivity: Activity
     fun cratePopUp(activity: Activity, title: String, message: String) {
         var popDialog = Dialog(activity)
-        val confirmButton = activity.findViewById<Button>(R.id.confirm)
         popDialog.setContentView(R.layout.pop_up)
-        activity.findViewById<TextView>(R.id.infoText).text = message
-        activity.findViewById<TextView>(R.id.headLine).text = title
-
+        popDialog.setCancelable(false)
+        popDialog.show()
+        val confirmButton = popDialog.findViewById<Button>(R.id.confirm)
+        val messageText = popDialog.findViewById<TextView>(R.id.messageText)
+        var heading = popDialog.findViewById<TextView>(R.id.headLineText)
+        println("" + messageText + " " + heading + "a")
+        messageText.text = message
+        heading.text = title
         popDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         confirmButton.setOnClickListener {
             popDialog.dismiss()

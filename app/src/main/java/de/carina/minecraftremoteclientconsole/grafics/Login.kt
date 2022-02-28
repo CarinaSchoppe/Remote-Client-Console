@@ -29,7 +29,8 @@ class Login : AppCompatActivity() {
         val loginButton = findViewById<Button>(R.id.loginButton)
         loginButton.setOnClickListener {
             println(findViewById<EditText>(R.id.port).text)
-            //Client(ip=ip, port=port.toInt(), name=userName,password= password)
+            val instance = Client(ip = ip.toString(), port = port.toString().toInt(), name = userName.toString(), password = password.toString())
+            client = instance
             if (client.connect()) {
                 startActivity(Intent(this, Console::class.java))
             } else {

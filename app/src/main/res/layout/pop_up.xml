@@ -12,7 +12,7 @@
 
             android:textSize="22sp"
             android:text="Headline"
-            android:id="@+id/headLine"
+            android:id="@+id/headLineText"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -32,9 +32,9 @@
             android:text="TextView"
             android:layout_width="232dp"
             android:layout_height="132dp"
-            android:id="@+id/textInfo"
+            android:id="@+id/messageText"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/headLine"
+            app:layout_constraintBottom_toBottomOf="@+id/headLineText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.37" />
