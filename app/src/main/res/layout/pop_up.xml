@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#62def8"
+        android:id="@+id/relativeLayout">
+
+    <TextView
+            android:layout_width="347dp"
+            android:layout_height="321dp"
+
+            android:textSize="22sp"
+            android:text="Headline"
+            android:id="@+id/headLine"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+            android:text="okay"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/confirm"
+            android:layout_marginBottom="-2dp"
+            android:layout_marginEnd="119dp"
+            android:layout_marginStart="104dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+            android:text="TextView"
+            android:layout_width="232dp"
+            android:layout_height="132dp"
+            android:id="@+id/textInfo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/headLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.37" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

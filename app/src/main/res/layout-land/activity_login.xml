@@ -4,35 +4,33 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MinecraftRemoteClientConsole">
+        tools:context=".grafics.Login">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+            android:layout_width="822dp"
             android:layout_height="match_parent"
-            android:id="@+id/constraintLayout2">
+            android:id="@+id/constraintLayout2"
+            app:layout_anchorGravity="center"
+            app:layout_anchor="@+id/constraintLayout2">
 
         <ImageView
-                android:layout_width="411dp"
-                android:layout_height="732dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 app:srcCompat="@drawable/background"
-                android:id="@+id/imageView2"
-                android:rotation="90"
-                android:scaleX="2"
-                android:scaleY="2.5"
-                android:cropToPadding="false"
-                android:contentDescription="Background Image"
-                android:scaleType="fitCenter"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/imageView"
+                android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:adjustViewBounds="true"
+                app:layout_constraintHorizontal_bias="0.0" />
 
         <TextView
                 android:text="Minecraft Remote Console Login"
-                android:layout_width="325dp"
-                android:layout_height="55dp"
+                android:layout_width="501dp"
+                android:layout_height="36dp"
                 android:id="@+id/displayText"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -44,38 +42,43 @@
                 android:textColor="#673AB7" />
 
         <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="317dp"
+                android:layout_height="56dp"
                 android:inputType="textPersonName"
                 android:text="IP"
                 android:ems="10"
                 android:id="@+id/ip"
                 app:layout_constraintTop_toTopOf="parent"
+                android:background="#FFFFFF"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.079"
-                app:layout_constraintVertical_bias="0.161"
+                app:layout_constraintHorizontal_bias="0.089"
+                app:layout_constraintVertical_bias="0.202"
                 android:textSize="23sp" />
 
         <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="326dp"
+                android:layout_height="52dp"
                 android:inputType="textPersonName"
                 android:text="PORT"
                 android:ems="10"
                 android:id="@+id/port"
+                android:background="#FFFFFF"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.078"
-                app:layout_constraintVertical_bias="0.248"
+                app:layout_constraintHorizontal_bias="0.077"
+                app:layout_constraintVertical_bias="0.414"
                 android:textSize="23sp" />
 
         <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="327dp"
+                android:background="#FFFFFF"
+
+                android:layout_height="50dp"
                 android:inputType="textPersonName"
                 android:text="username"
                 android:ems="10"
@@ -84,35 +87,37 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.078"
-                app:layout_constraintVertical_bias="0.349"
+                app:layout_constraintHorizontal_bias="0.076"
+                app:layout_constraintVertical_bias="0.622"
                 android:textSize="23sp" />
 
         <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="336dp"
+                android:layout_height="50dp"
                 android:inputType="textPassword"
                 android:ems="10"
                 android:id="@+id/password"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:background="#FFFFFF"
+
                 app:layout_constraintEnd_toEndOf="parent"
+                android:text="Password"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.079"
-                app:layout_constraintVertical_bias="0.45" />
+                app:layout_constraintHorizontal_bias="0.07"
+                app:layout_constraintVertical_bias="0.853" />
 
         <Button
                 android:text="Login"
-                android:layout_width="163dp"
-                android:layout_height="88dp"
+                android:layout_width="192dp"
+                android:layout_height="122dp"
                 android:id="@+id/loginButton"
-                android:textZize="10sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.475"
-                app:layout_constraintVertical_bias="0.632"
+                app:layout_constraintHorizontal_bias="0.853"
+                app:layout_constraintVertical_bias="0.522"
                 android:textColor="#FFEB3B"
                 android:textAllCaps="false"
                 android:textSize="14sp" />

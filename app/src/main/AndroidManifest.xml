@@ -13,16 +13,19 @@
             android:theme="@style/Theme.MinecraftRemoteClientConsole"
             tools:targetApi="31">
         <activity
-                android:name="de.carina.minecraftremoteclientconsole.Chat"
+                android:name=".Login"
                 android:exported="false" />
         <activity
-                android:name="de.carina.minecraftremoteclientconsole.PlayerMenu"
+                android:name="de.carina.minecraftremoteclientconsole.grafics.Chat"
                 android:exported="false" />
         <activity
-                android:name=".Console"
+                android:name="de.carina.minecraftremoteclientconsole.grafics.PlayerMenu"
+                android:exported="false" />
+        <activity
+                android:name=".grafics.Console"
                 android:exported="true" />
         <activity
-                android:name=".MinecraftRemoteClientConsole"
+                android:name=".grafics.Login"
                 android:exported="true"
                 android:label="@string/app_name"
                 android:theme="@style/Theme.MinecraftRemoteClientConsole.NoActionBar">
