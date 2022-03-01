@@ -1,6 +1,8 @@
 package de.carina.minecraftremoteclientconsole.server
 
 import android.content.Intent
+import android.os.Handler
+import android.os.Looper
 import android.widget.TextView
 import de.carina.minecraftremoteclientconsole.R
 import de.carina.minecraftremoteclientconsole.grafics.Console
@@ -11,7 +13,6 @@ import de.carina.minecraftremoteclientconsole.util.PopUp
 object PacketInputHandler {
 
     fun handlePacket(packet: Packet) {
-        println("Server has send: ${packet.createJsonPacket()}")
         when (packet.packetType) {
             PacketType.LOGIN -> {
                 if (!packet.data.get("magic").asString.equals(Client.instance.magicCode)) {
@@ -21,18 +22,25 @@ object PacketInputHandler {
             }
             PacketType.ERROR -> {
                 if (packet.data.get("action").asString.equals("disconnect")) {
-                    PopUp.createBadPopUp(PopUp.activeActivity, "Error", packet.data.get("message").asString)
+                    Handler(Looper.getMainLooper()).post {
+                        PopUp.createBadPopUp(PopUp.activeActivity, "Disconnected", "You have been disconnected from the server.")
+                    }
                     Client.instance.disconnect()
                 }
             }
             PacketType.SUCCESS -> {
-                PopUp.activeActivity.startActivity(Intent(PopUp.activeActivity, Console::class.java))
+                Handler(Looper.getMainLooper()).post {
+                    PopUp.activeActivity.startActivity(Intent(PopUp.activeActivity, Console::class.java))
+                }
             }
             PacketType.LOG -> {
-                val console = PopUp.activeActivity.findViewById<TextView>(R.id.consoleOut)
                 Console.text += packet.data.get("log").asString.replace("§", "&") + "\n"
-                if (console != null) {
-                    console.setText(Console.text)
+
+                Handler(Looper.getMainLooper()).post {
+                    val console = PopUp.activeActivity.findViewById<TextView>(R.id.consoleOut)
+                    if (console != null) {
+                        console.setText(Console.text)
+                    }
                 }
             }
 
@@ -45,12 +53,16 @@ object PacketInputHandler {
 //            }
             PacketType.INFO -> {
                 if (packet.data.get("info").asJsonObject.get("type").asString == "success")
-                    PopUp.createGoodPopUp(PopUp.activeActivity, packet.data.get("info").asJsonObject.get("title").asString, packet.data.get("info").asJsonObject.get("text").asString)
-                else if ((packet.data.get("info").asJsonObject.get("type").asString == "fail"))
-                    PopUp.createBadPopUp(PopUp.activeActivity, packet.data.get("info").asJsonObject.get("title").asString, packet.data.get("info").asJsonObject.get("text").asString)
-                else if ((packet.data.get("info").asJsonObject.get("type").asString == "warn"))
-                    PopUp.createBadPopUp(PopUp.activeActivity, packet.data.get("info").asJsonObject.get("title").asString, packet.data.get("info").asJsonObject.get("text").asString)
+                    Handler(Looper.getMainLooper()).post {
+                        PopUp.createGoodPopUp(PopUp.activeActivity, packet.data.get("info").asJsonObject.get("title").asString, packet.data.get("info").asJsonObject.get("text").asString)
+                    } else if ((packet.data.get("info").asJsonObject.get("type").asString == "fail"))
+                    Handler(Looper.getMainLooper()).post {
+                        PopUp.createBadPopUp(PopUp.activeActivity, packet.data.get("info").asJsonObject.get("title").asString, packet.data.get("info").asJsonObject.get("text").asString)
+                    } else if ((packet.data.get("info").asJsonObject.get("type").asString == "warn"))
+                    Handler(Looper.getMainLooper()).post {
+                        PopUp.createBadPopUp(PopUp.activeActivity, packet.data.get("info").asJsonObject.get("title").asString, packet.data.get("info").asJsonObject.get("text").asString)
 
+                    }
             }
 
 //            PacketType.CHAT -> {

@@ -85,7 +85,7 @@ class Client(private val name: String, private val ip: String, private val port:
                     return@Thread
                 }
                 if (input != null) {
-                    //     PacketInputHandler.handlePacket(Packet.fromJson(input))
+                    PacketInputHandler.handlePacket(Packet.fromJson(input))
                 } else {
                     disconnect()
                     return@Thread

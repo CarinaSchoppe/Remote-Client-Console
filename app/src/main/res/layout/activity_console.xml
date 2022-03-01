@@ -97,8 +97,8 @@
 
     <TextView
             android:text="console output"
-            android:layout_width="227dp"
-            android:layout_height="571dp"
+            android:layout_width="216dp"
+            android:layout_height="515dp"
             android:id="@+id/consoleOut"
             app:layout_constraintStart_toStartOf="parent"
             android:background="#FFFFFF"
