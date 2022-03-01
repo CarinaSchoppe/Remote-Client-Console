@@ -24,13 +24,17 @@ class Client(private val name: String, private val ip: String, private val port:
 
     fun connect(): Boolean {
         try {
-            socket = Socket(ip, port)
-            println("Client $name connected to $ip:$port")
+            Thread({
+                println("Connecting to $ip:${port}")
+                socket = Socket(ip, port)
+                start()
+                println("Client $name connected to $ip:$port")
+            }).start()
             return true
         } catch (e: Exception) {
-
+            println(e.printStackTrace())
+            return false
         }
-        return false
     }
 
 

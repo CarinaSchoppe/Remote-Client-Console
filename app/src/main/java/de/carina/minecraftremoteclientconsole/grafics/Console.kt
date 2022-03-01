@@ -12,4 +12,8 @@ class Console : AppCompatActivity() {
         PopUp.activeActivity = this
 
     }
+
+    companion object {
+        var text = ""
+    }
 }

@@ -30,7 +30,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.052"
+            app:layout_constraintHorizontal_bias="0.059"
             app:layout_constraintVertical_bias="0.586" />
 
     <Button
@@ -79,11 +79,12 @@
             app:layout_constraintHorizontal_bias="0.022" />
 
     <TextView
-            android:text="Carinas Remote-Console"
-            android:layout_width="161dp"
-            android:layout_height="43dp"
+            android:text="Minecraft Remote-Console"
+            android:layout_width="185dp"
+            android:layout_height="54dp"
             android:id="@+id/infoText"
-            android:textSize="12sp"
+            android:textSize="20sp"
+            android:textColor="@color/black"
             android:textColorHighlight="#2196F3"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -92,31 +93,30 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintVertical_bias="0.022"
             android:textAlignment="center"
-            android:textColor="#2196F3"
             style="@style/Widget.AppCompat.TextView" />
 
     <TextView
             android:text="console output"
-            android:layout_width="254dp"
-            android:layout_height="633dp"
+            android:layout_width="227dp"
+            android:layout_height="571dp"
             android:id="@+id/consoleOut"
             app:layout_constraintStart_toStartOf="parent"
             android:background="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.972"
-            app:layout_constraintVertical_bias="0.923" />
+            app:layout_constraintHorizontal_bias="0.913"
+            app:layout_constraintVertical_bias="0.6" />
 
     <EditText
-            android:layout_width="133dp"
+            android:layout_width="146dp"
             android:layout_height="97dp"
             android:inputType="text"
             android:text="command"
             android:ems="10"
             android:id="@+id/command"
             android:background="#FFFFFF"
-            tools:layout_editor_absoluteY="282dp"
-            tools:layout_editor_absoluteX="6dp" />
+            tools:layout_editor_absoluteY="285dp"
+            tools:layout_editor_absoluteX="7dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
