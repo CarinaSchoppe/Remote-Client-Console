@@ -1,4 +1,4 @@
-package de.carina.minecraftremoteclientconsole.server
+package de.carina.minecraftremoteclientconsole.client
 
 import com.google.gson.JsonObject
 import de.carina.minecraftremoteclientconsole.util.Encoder
@@ -40,7 +40,9 @@ class Client(private val name: String, private val ip: String, private val port:
 
     fun logout() {
         val json = JsonObject()
-        writer.println(Packet(PacketType.LOGOUT, json).createJsonPacket())
+        Thread({
+            writer.println(Packet(PacketType.LOGOUT, json).createJsonPacket())
+        }).start()
     }
 
     fun disconnect() {

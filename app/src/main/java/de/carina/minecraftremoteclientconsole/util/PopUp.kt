@@ -17,12 +17,12 @@ object PopUp {
         popDialog.setContentView(R.layout.pop_up_good)
         popDialog.setCancelable(false)
         popDialog.show()
-        val confirmButton = popDialog.findViewById<Button>(R.id.confirmBad)
+        val confirmButton = popDialog.findViewById<Button>(R.id.confirmGood)
         val messageText = popDialog.findViewById<TextView>(R.id.messageTextBad)
         var heading = popDialog.findViewById<TextView>(R.id.headLineBad)
         messageText.setText(message)
         heading.setText(title)
-        popDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        popDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         confirmButton.setOnClickListener {
             popDialog.dismiss()
         }
@@ -38,7 +38,7 @@ object PopUp {
         var heading = popDialog.findViewById<TextView>(R.id.headLineBad)
         messageText.setText(message)
         heading.setText(title)
-        popDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        popDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         confirmButton.setOnClickListener {
             popDialog.dismiss()
         }

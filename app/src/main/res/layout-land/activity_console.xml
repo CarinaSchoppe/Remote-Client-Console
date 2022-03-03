@@ -31,8 +31,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.028"
-            app:layout_constraintVertical_bias="0.681" />
+            app:layout_constraintHorizontal_bias="0.035"
+            app:layout_constraintVertical_bias="0.78" />
 
     <Button
             android:text="Chat"
@@ -61,8 +61,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.947"
-            app:layout_constraintVertical_bias="0.005" />
+            app:layout_constraintHorizontal_bias="0.892"
+            app:layout_constraintVertical_bias="0.077" />
 
     <Button
             android:text="Player-Menu"
@@ -90,14 +90,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.02"
+            app:layout_constraintVertical_bias="0.098"
             android:textAlignment="center"
             android:textColor="@color/black"
-            style="@style/Widget.AppCompat.TextView" />
+            style="@style/Widget.AppCompat.TextView"
+            app:layout_constraintHorizontal_bias="0.467" />
 
     <EditText
-            android:layout_width="175dp"
-            android:layout_height="39dp"
+            android:layout_width="171dp"
+            android:layout_height="71dp"
             android:inputType="textPersonName"
             android:text="command"
             android:ems="10"
@@ -107,11 +108,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.005" />
+            app:layout_constraintHorizontal_bias="0.008"
+            app:layout_constraintVertical_bias="0.526" />
 
     <TextView
-            android:layout_width="520dp"
-            android:layout_height="359dp"
+            android:layout_width="488dp"
+            android:layout_height="271dp"
             android:text="Console output"
             android:id="@+id/console"
             android:background="#FFFFFF"
@@ -119,8 +121,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.924"
-            app:layout_constraintVertical_bias="0.884" />
+            app:layout_constraintHorizontal_bias="0.793"
+            app:layout_constraintVertical_bias="0.846" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

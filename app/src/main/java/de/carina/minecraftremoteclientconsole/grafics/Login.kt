@@ -5,7 +5,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import de.carina.minecraftremoteclientconsole.R
-import de.carina.minecraftremoteclientconsole.server.Client
+import de.carina.minecraftremoteclientconsole.client.Client
 import de.carina.minecraftremoteclientconsole.util.PopUp
 
 
@@ -33,15 +33,17 @@ class Login : AppCompatActivity() {
         val loginButton = findViewById<Button>(R.id.loginButton)
         loginButton.setOnClickListener {
             try {
-                val instance = Client(ip = ip.toString(), port = port.toString().toInt(), name = userName.toString(), password = password.toString())
-                client = instance
-                if (!client.connect()) {
-                    PopUp.createBadPopUp(this, "Error", "Could not connect to server")
-                }
+                port.toString().toInt()
             } catch (e: Exception) {
                 PopUp.createBadPopUp(this, "Port Error", "The port must be a number")
-
+                return@setOnClickListener
             }
+            val instance = Client(ip = ip.toString(), port = port.toString().toInt(), name = userName.toString(), password = password.toString())
+            client = instance
+            if (!client.connect()) {
+                PopUp.createBadPopUp(this, "Error", "Could not connect to server")
+            }
+
 
         }
     }

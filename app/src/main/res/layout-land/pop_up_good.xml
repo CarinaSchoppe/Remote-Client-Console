@@ -34,8 +34,8 @@
 
     <TextView
             android:text="TextView"
-            android:layout_width="318dp"
-            android:layout_height="38dp"
+            android:layout_width="327dp"
+            android:layout_height="82dp"
             android:id="@+id/messageTextBad"
             android:textSize="24sp"
             android:textColor="@color/green"
@@ -45,8 +45,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.261"
-            app:layout_constraintHorizontal_bias="0.466" />
+            app:layout_constraintVertical_bias="0.228"
+            app:layout_constraintHorizontal_bias="0.521" />
 
     <TextView
             android:text="Headline"

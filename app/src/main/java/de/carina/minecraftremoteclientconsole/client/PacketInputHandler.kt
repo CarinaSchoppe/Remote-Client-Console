@@ -1,4 +1,4 @@
-package de.carina.minecraftremoteclientconsole.server
+package de.carina.minecraftremoteclientconsole.client
 
 import android.content.Intent
 import android.os.Handler
@@ -9,6 +9,7 @@ import de.carina.minecraftremoteclientconsole.grafics.Console
 import de.carina.minecraftremoteclientconsole.util.Packet
 import de.carina.minecraftremoteclientconsole.util.PacketType
 import de.carina.minecraftremoteclientconsole.util.PopUp
+import de.carina.minecraftremoteclientconsole.util.Utility
 
 object PacketInputHandler {
 
@@ -31,15 +32,16 @@ object PacketInputHandler {
             PacketType.SUCCESS -> {
                 Handler(Looper.getMainLooper()).post {
                     PopUp.activeActivity.startActivity(Intent(PopUp.activeActivity, Console::class.java))
+                    val console = PopUp.activeActivity.findViewById<TextView>(R.id.consoleOut)
+                    console.setText(Utility.consoleText)
                 }
             }
             PacketType.LOG -> {
-                Console.text += packet.data.get("log").asString.replace("§", "&") + "\n"
-
+                Utility.consoleText += packet.data.get("log").asString.replace("§", "&") + "\n"
                 Handler(Looper.getMainLooper()).post {
                     val console = PopUp.activeActivity.findViewById<TextView>(R.id.consoleOut)
                     if (console != null) {
-                        console.setText(Console.text)
+                        console.setText(Utility.consoleText)
                     }
                 }
             }
@@ -55,13 +57,14 @@ object PacketInputHandler {
                 if (packet.data.get("info").asJsonObject.get("type").asString == "success")
                     Handler(Looper.getMainLooper()).post {
                         PopUp.createGoodPopUp(PopUp.activeActivity, packet.data.get("info").asJsonObject.get("title").asString, packet.data.get("info").asJsonObject.get("text").asString)
-                    } else if ((packet.data.get("info").asJsonObject.get("type").asString == "fail"))
+                    }
+                else if ((packet.data.get("info").asJsonObject.get("type").asString == "fail"))
                     Handler(Looper.getMainLooper()).post {
                         PopUp.createBadPopUp(PopUp.activeActivity, packet.data.get("info").asJsonObject.get("title").asString, packet.data.get("info").asJsonObject.get("text").asString)
-                    } else if ((packet.data.get("info").asJsonObject.get("type").asString == "warn"))
+                    }
+                else if ((packet.data.get("info").asJsonObject.get("type").asString == "warn"))
                     Handler(Looper.getMainLooper()).post {
                         PopUp.createBadPopUp(PopUp.activeActivity, packet.data.get("info").asJsonObject.get("title").asString, packet.data.get("info").asJsonObject.get("text").asString)
-
                     }
             }
 

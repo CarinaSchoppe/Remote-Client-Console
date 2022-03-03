@@ -42,8 +42,8 @@
                 android:textColor="#673AB7" />
 
         <EditText
-                android:layout_width="317dp"
-                android:layout_height="56dp"
+                android:layout_width="326dp"
+                android:layout_height="52dp"
                 android:inputType="textPersonName"
                 android:text="IP"
                 android:ems="10"
@@ -75,10 +75,9 @@
                 android:textSize="23sp" />
 
         <EditText
-                android:layout_width="327dp"
+                android:layout_width="326dp"
+                android:layout_height="52dp"
                 android:background="#FFFFFF"
-
-                android:layout_height="50dp"
                 android:inputType="textPersonName"
                 android:text="username"
                 android:ems="10"
