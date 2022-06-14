@@ -30,7 +30,6 @@ enum class PacketType(val code: String) {
 
 class Packet(val packetType: PacketType, val data: JsonObject) {
     companion object {
-
         fun fromJson(input: String): Packet {
             val json = Gson().fromJson(input, JsonObject::class.java)
             val type = PacketType.values().first { it.code == json.get("type").asString }

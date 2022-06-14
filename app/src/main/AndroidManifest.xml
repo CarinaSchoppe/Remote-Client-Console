@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright Notice for MinecraftRemoteClientConsole
-  ~ Copyright (c) at Carina Sophie Schoppe 2022
-  ~ File created on 14.06.22, 15:35 by Carina The Latest changes made by Carina on 14.06.22, 15:15 All contents of "AndroidManifest.xml" are protected by copyright. The copyright law, unless expressly indicated otherwise, is
-  ~ at Carina Sophie Schoppe. All rights reserved
-  ~ Any type of duplication, distribution, rental, sale, award,
-  ~ Public accessibility or other use
-  ~ requires the express written consent of Carina Sophie Schoppe.
-  -->
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools">
 
@@ -26,16 +16,21 @@
             android:theme="@style/Theme.MinecraftRemoteClientConsole"
             tools:targetApi="31">
         <activity
-                android:name=".Chat"
-                android:exported="false" />
-        <activity
                 android:name=".PlayerMenu"
                 android:exported="false" />
+        <!-- set the package to de.carinasophie.minecraftremoteclientconsole.graphics -->
         <activity
-                android:name=".Console"
+                android:name=".graphics.Chat"
+                android:exported="false" />
+        <activity
+                android:name=".graphics.PlayerMenu"
+                android:exported="false" />
+        <activity
+                android:name=".graphics.Console"
                 android:exported="true" />
         <activity
-                android:name=".Login"
+                android:name=".graphics.Login"
+                package="de.carinasophie.minecraftremoteclientconsole.graphics"
                 android:exported="true"
                 android:label="@string/app_name"
                 android:theme="@style/Theme.MinecraftRemoteClientConsole.NoActionBar">

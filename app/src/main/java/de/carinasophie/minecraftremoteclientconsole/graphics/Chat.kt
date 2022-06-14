@@ -60,7 +60,7 @@ class Chat : AppCompatActivity() {
                 val json = JsonObject()
                 json.addProperty("chat", "${window.text}")
                 Thread {
-                    Client.instance.writer.println(Packet(PacketType.COMMAND, json).createJsonPacket())
+                    Client.instance.writer.println(Packet(PacketType.CHAT, json).createJsonPacket())
                 }.start()
                 window.setText("chat")
             }

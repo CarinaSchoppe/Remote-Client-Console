@@ -59,8 +59,7 @@ object PacketInputHandler {
                     Handler(Looper.getMainLooper()).post {
                         PopUp.createGoodPopUp(Utility.activeActivity, packet.data.get("info").asJsonObject.get("title").asString, packet.data.get("info").asJsonObject.get("text").asString)
                     }
-
-                else if ((packet.data.get("info").asJsonObject.get("type").asString == "fail")|| (packet.data.get("info").asJsonObject.get("type").asString == "warn"))
+                else if ((packet.data.get("info").asJsonObject.get("type").asString == "fail") || (packet.data.get("info").asJsonObject.get("type").asString == "warn"))
                     Handler(Looper.getMainLooper()).post {
                         PopUp.createBadPopUp(Utility.activeActivity, packet.data.get("info").asJsonObject.get("title").asString, packet.data.get("info").asJsonObject.get("text").asString)
                     }
@@ -77,7 +76,8 @@ object PacketInputHandler {
 
             PacketType.CHAT_BACKUP -> {
                 Handler(Looper.getMainLooper()).post {
-                    Utility.chat += packet.data.get("message").asString + "\n"
+                    if (!packet.data.get("message").asString.equals(""))
+                        Utility.chat += packet.data.get("message").asString + "\n"
                     if (Utility.activeActivity is Chat) {
                         Utility.activeActivity.findViewById<TextView>(R.id.chatOut)?.text = Utility.chat
                     }
