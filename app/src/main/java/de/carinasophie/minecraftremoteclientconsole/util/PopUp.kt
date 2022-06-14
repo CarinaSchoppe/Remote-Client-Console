@@ -1,3 +1,13 @@
+/*
+ * Copyright Notice for MinecraftRemoteClientConsole
+ * Copyright (c) at Carina Sophie Schoppe 2022
+ * File created on 14.06.22, 15:35 by Carina The Latest changes made by Carina on 14.06.22, 15:34 All contents of "PopUp.kt" are protected by copyright. The copyright law, unless expressly indicated otherwise, is
+ * at Carina Sophie Schoppe. All rights reserved
+ * Any type of duplication, distribution, rental, sale, award,
+ * Public accessibility or other use
+ * requires the express written consent of Carina Sophie Schoppe.
+ */
+
 package de.carinasophie.minecraftremoteclientconsole.util
 
 import android.app.Activity
@@ -6,13 +16,11 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import de.carina.minecraftremoteclientconsole.R
+import de.carinasophie.minecraftremoteclientconsole.R
 
 
 object PopUp {
 
-    lateinit var activeActivity: AppCompatActivity
     fun createGoodPopUp(activity: Activity, title: String, message: String) {
         var popDialog = Dialog(activity)
         popDialog.setContentView(R.layout.pop_up_good)

@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright Notice for MinecraftRemoteClientConsole
+  ~ Copyright (c) at Carina Sophie Schoppe 2022
+  ~ File created on 14.06.22, 15:35 by Carina The Latest changes made by Carina on 14.06.22, 12:03 All contents of "activity_login.xml" are protected by copyright. The copyright law, unless expressly indicated otherwise, is
+  ~ at Carina Sophie Schoppe. All rights reserved
+  ~ Any type of duplication, distribution, rental, sale, award,
+  ~ Public accessibility or other use
+  ~ requires the express written consent of Carina Sophie Schoppe.
+  -->
+
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"

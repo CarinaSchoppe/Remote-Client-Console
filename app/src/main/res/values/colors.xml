@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright Notice for MinecraftRemoteClientConsole
+  ~ Copyright (c) at Carina Sophie Schoppe 2022
+  ~ File created on 14.06.22, 15:35 by Carina The Latest changes made by Carina on 28.02.22, 16:58 All contents of "colors.xml" are protected by copyright. The copyright law, unless expressly indicated otherwise, is
+  ~ at Carina Sophie Schoppe. All rights reserved
+  ~ Any type of duplication, distribution, rental, sale, award,
+  ~ Public accessibility or other use
+  ~ requires the express written consent of Carina Sophie Schoppe.
+  -->
+
 <resources>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
