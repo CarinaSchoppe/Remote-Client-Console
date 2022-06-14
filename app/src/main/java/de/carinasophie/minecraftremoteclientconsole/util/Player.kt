@@ -1,4 +1,4 @@
-package de.carina.minecraftremoteclientconsole.util
+package de.carinasophie.minecraftremoteclientconsole.util
 
 data class Coordinates(val x: Int, val y: Int, val z: Int) {
     override fun toString(): String {

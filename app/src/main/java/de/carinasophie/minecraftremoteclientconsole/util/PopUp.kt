@@ -1,4 +1,4 @@
-package de.carina.minecraftremoteclientconsole.util
+package de.carinasophie.minecraftremoteclientconsole.util
 
 import android.app.Activity
 import android.app.Dialog
@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import de.carina.minecraftremoteclientconsole.R
+
 
 object PopUp {
 
@@ -20,8 +21,8 @@ object PopUp {
         val confirmButton = popDialog.findViewById<Button>(R.id.confirmGood)
         val messageText = popDialog.findViewById<TextView>(R.id.messageTextBad)
         var heading = popDialog.findViewById<TextView>(R.id.headLineBad)
-        messageText.setText(message)
-        heading.setText(title)
+        messageText.text = message
+        heading.text = title
         popDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         confirmButton.setOnClickListener {
             popDialog.dismiss()
@@ -36,8 +37,8 @@ object PopUp {
         val confirmButton = popDialog.findViewById<Button>(R.id.confirmBad)
         val messageText = popDialog.findViewById<TextView>(R.id.messageTextBad)
         var heading = popDialog.findViewById<TextView>(R.id.headLineBad)
-        messageText.setText(message)
-        heading.setText(title)
+        messageText.text = message
+        heading.text = title
         popDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         confirmButton.setOnClickListener {
             popDialog.dismiss()

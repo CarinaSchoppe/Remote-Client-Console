@@ -1,4 +1,4 @@
-package de.carina.minecraftremoteclientconsole
+package de.carinasophie.minecraftremoteclientconsole
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

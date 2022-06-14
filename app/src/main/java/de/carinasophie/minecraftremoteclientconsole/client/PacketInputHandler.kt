@@ -1,15 +1,15 @@
-package de.carina.minecraftremoteclientconsole.client
+package de.carinasophie.minecraftremoteclientconsole.client
 
 import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import android.widget.TextView
 import de.carina.minecraftremoteclientconsole.R
-import de.carina.minecraftremoteclientconsole.grafics.Console
-import de.carina.minecraftremoteclientconsole.util.Packet
-import de.carina.minecraftremoteclientconsole.util.PacketType
-import de.carina.minecraftremoteclientconsole.util.PopUp
-import de.carina.minecraftremoteclientconsole.util.Utility
+import de.carinasophie.minecraftremoteclientconsole.graphics.Console
+import de.carinasophie.minecraftremoteclientconsole.util.Packet
+import de.carinasophie.minecraftremoteclientconsole.util.PacketType
+import de.carinasophie.minecraftremoteclientconsole.util.PopUp
+import de.carinasophie.minecraftremoteclientconsole.util.Utility
 
 object PacketInputHandler {
 
@@ -17,7 +17,7 @@ object PacketInputHandler {
         when (packet.packetType) {
             PacketType.LOGIN -> {
                 if (!packet.data.get("magic").asString.equals(Client.instance.magicCode)) {
-                    PopUp.createBadPopUp(PopUp.activeActivity, "Wrong Server", "The server you are trying to connect to is not aviable.")
+                    PopUp.createBadPopUp(PopUp.activeActivity, "Wrong Server", "The server you are trying to connect to is not available.")
                     Client.instance.disconnect()
                 }
             }
@@ -33,16 +33,13 @@ object PacketInputHandler {
                 Handler(Looper.getMainLooper()).post {
                     PopUp.activeActivity.startActivity(Intent(PopUp.activeActivity, Console::class.java))
                     val console = PopUp.activeActivity.findViewById<TextView>(R.id.consoleOut)
-                    console.setText(Utility.consoleText)
+                    console?.text = Utility.consoleText
                 }
             }
             PacketType.LOG -> {
                 Utility.consoleText += packet.data.get("log").asString.replace("§", "&") + "\n"
                 Handler(Looper.getMainLooper()).post {
-                    val console = PopUp.activeActivity.findViewById<TextView>(R.id.consoleOut)
-                    if (console != null) {
-                        console.setText(Utility.consoleText)
-                    }
+                    PopUp.activeActivity.findViewById<TextView>(R.id.consoleOut)?.text = Utility.consoleText
                 }
             }
 
@@ -79,6 +76,7 @@ object PacketInputHandler {
             PacketType.LOGOUT -> {
                 Client.instance.disconnect()
             }
+            else -> {}
         }
 
     }

@@ -1,4 +1,4 @@
-package de.carina.minecraftremoteclientconsole.util
+package de.carinasophie.minecraftremoteclientconsole.util
 
 import com.google.gson.Gson
 import com.google.gson.JsonObject

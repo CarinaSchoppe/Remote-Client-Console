@@ -1,4 +1,4 @@
-package de.carina.minecraftremoteclientconsole.util
+package de.carinasophie.minecraftremoteclientconsole.util
 
 import java.util.*
 

@@ -1,4 +1,4 @@
-package de.carina.minecraftremoteclientconsole.grafics
+package de.carinasophie.minecraftremoteclientconsole.graphics
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,10 +7,10 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.JsonObject
 import de.carina.minecraftremoteclientconsole.R
-import de.carina.minecraftremoteclientconsole.client.Client
-import de.carina.minecraftremoteclientconsole.util.Packet
-import de.carina.minecraftremoteclientconsole.util.PacketType
-import de.carina.minecraftremoteclientconsole.util.PopUp
+import de.carinasophie.minecraftremoteclientconsole.client.Client
+import de.carinasophie.minecraftremoteclientconsole.util.Packet
+import de.carinasophie.minecraftremoteclientconsole.util.PacketType
+import de.carinasophie.minecraftremoteclientconsole.util.PopUp
 
 class Console : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,9 +38,9 @@ class Console : AppCompatActivity() {
             if (text.text.isNotEmpty()) {
                 val json = JsonObject()
                 json.addProperty("command", "${text.text}")
-                Thread({
+                Thread {
                     Client.instance.writer.println(Packet(PacketType.COMMAND, json).createJsonPacket())
-                }).start()
+                }.start()
                 text.setText("command")
             }
         }

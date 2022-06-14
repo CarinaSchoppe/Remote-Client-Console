@@ -1,9 +1,9 @@
-package de.carina.minecraftremoteclientconsole.client
+package de.carinasophie.minecraftremoteclientconsole.client
 
 import com.google.gson.JsonObject
-import de.carina.minecraftremoteclientconsole.util.Encoder
-import de.carina.minecraftremoteclientconsole.util.Packet
-import de.carina.minecraftremoteclientconsole.util.PacketType
+import de.carinasophie.minecraftremoteclientconsole.util.Encoder
+import de.carinasophie.minecraftremoteclientconsole.util.Packet
+import de.carinasophie.minecraftremoteclientconsole.util.PacketType
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
@@ -23,26 +23,26 @@ class Client(private val name: String, private val ip: String, private val port:
     }
 
     fun connect(): Boolean {
-        try {
-            Thread({
+        return try {
+            Thread {
                 println("Connecting to $ip:${port}")
                 socket = Socket(ip, port)
                 start()
                 println("Client $name connected to $ip:$port")
-            }).start()
-            return true
+            }.start()
+            true
         } catch (e: Exception) {
             println(e.printStackTrace())
-            return false
+            false
         }
     }
 
 
     fun logout() {
         val json = JsonObject()
-        Thread({
+        Thread {
             writer.println(Packet(PacketType.LOGOUT, json).createJsonPacket())
-        }).start()
+        }.start()
     }
 
     fun disconnect() {
@@ -53,15 +53,15 @@ class Client(private val name: String, private val ip: String, private val port:
         }
     }
 
-    fun start() {
+    private fun start() {
         if (socket == null)
             return
         if (socket!!.isConnected) {
             instance = this
             reader = BufferedReader(InputStreamReader(socket!!.getInputStream(), StandardCharsets.UTF_8), 16384)
             writer = PrintWriter(OutputStreamWriter(socket!!.getOutputStream(), StandardCharsets.UTF_8), true)
+            reader()
             login()
-            read()
         }
     }
 
@@ -76,7 +76,7 @@ class Client(private val name: String, private val ip: String, private val port:
 
     }
 
-    private fun read() {
+    private fun reader() {
         Thread {
             while (true) {
                 var input: String?

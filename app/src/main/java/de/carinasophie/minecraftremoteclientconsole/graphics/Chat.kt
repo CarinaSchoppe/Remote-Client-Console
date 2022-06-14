@@ -1,14 +1,16 @@
-package de.carina.minecraftremoteclientconsole.grafics
+package de.carinasophie.minecraftremoteclientconsole.graphics
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import de.carina.minecraftremoteclientconsole.R
-import de.carina.minecraftremoteclientconsole.util.PopUp
+import de.carinasophie.minecraftremoteclientconsole.util.PopUp
 
-class PlayerMenu : AppCompatActivity() {
+class Chat : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_player_menu)
+        println("hier")
+        setContentView(R.layout.activity_chat)
         PopUp.activeActivity = this
+
     }
 }

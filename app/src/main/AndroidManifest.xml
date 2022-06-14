@@ -16,16 +16,16 @@
             android:theme="@style/Theme.MinecraftRemoteClientConsole"
             tools:targetApi="31">
         <activity
-                android:name=".grafics.Chat"
+                android:name="de.carinasophie.minecraftremoteclientconsole.graphics.Chat"
                 android:exported="false" />
         <activity
-                android:name=".grafics.PlayerMenu"
+                android:name="de.carinasophie.minecraftremoteclientconsole.graphics.PlayerMenu"
                 android:exported="false" />
         <activity
-                android:name=".grafics.Console"
+                android:name="de.carinasophie.minecraftremoteclientconsole.graphics.Console"
                 android:exported="true" />
         <activity
-                android:name=".grafics.Login"
+                android:name="de.carinasophie.minecraftremoteclientconsole.graphics.Login"
                 android:exported="true"
                 android:label="@string/app_name"
                 android:theme="@style/Theme.MinecraftRemoteClientConsole.NoActionBar">
