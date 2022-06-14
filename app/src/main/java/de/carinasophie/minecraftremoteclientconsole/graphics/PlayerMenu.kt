@@ -10,26 +10,14 @@
 
 package de.carinasophie.minecraftremoteclientconsole.graphics
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import de.carinasophie.minecraftremoteclientconsole.R
-import de.codecrafters.tableview.TableView
-import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter
 
 class PlayerMenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_player_menu)
-
-        val array: List<Array<out String>> = listOf(arrayOf("1", "2", "3"), arrayOf("4", "5", "6"), arrayOf("7", "8", "9"))
-
-        val tableView = findViewById<TableView<Array<String>>>(R.id.tableView)
-        tableView.setHeaderBackgroundColor(Color.BLUE)
-        tableView.headerAdapter = SimpleTableHeaderAdapter(this, "a", "b", "c")
-        tableView.columnCount = 3
-/*        tableView.dataAdapter = SimpleTableDataAdapter(this, array)*/
-
 
     }
 }
