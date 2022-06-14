@@ -39,6 +39,7 @@ class Chat : AppCompatActivity() {
         sendButton()
         Utility.logout()
         Utility.consoleMenuButton()
+        Utility.playerMenuButton()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

@@ -40,6 +40,7 @@ class Console : AppCompatActivity() {
         sendButton()
         Utility.logout()
         Utility.chatMenuButton()
+        Utility.playerMenuButton()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

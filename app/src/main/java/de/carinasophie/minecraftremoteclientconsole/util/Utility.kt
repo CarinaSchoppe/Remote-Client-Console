@@ -18,25 +18,34 @@ import de.carinasophie.minecraftremoteclientconsole.client.Client
 import de.carinasophie.minecraftremoteclientconsole.graphics.Chat
 import de.carinasophie.minecraftremoteclientconsole.graphics.Console
 import de.carinasophie.minecraftremoteclientconsole.graphics.Login
+import de.carinasophie.minecraftremoteclientconsole.graphics.PlayerMenu
 
 object Utility {
     var consoleText = """"""
-    var chat =""""""
+    var chat = """"""
     lateinit var activeActivity: AppCompatActivity
 
-     fun chatMenuButton(){
+    fun chatMenuButton() {
         val button = activeActivity.findViewById<Button>(R.id.chatButton)
         button.setOnClickListener {
             activeActivity.startActivity(Intent(activeActivity, Chat::class.java))
         }
     }
 
-    fun consoleMenuButton(){
+    fun playerMenuButton() {
+        val button = activeActivity.findViewById<Button>(R.id.playerMenuButton)
+        button.setOnClickListener {
+            activeActivity.startActivity(Intent(activeActivity, PlayerMenu::class.java))
+        }
+    }
+
+    fun consoleMenuButton() {
         val button = activeActivity.findViewById<Button>(R.id.consoleButton)
         button.setOnClickListener {
             activeActivity.startActivity(Intent(activeActivity, Console::class.java))
         }
     }
+
     fun logout() {
         val button = activeActivity.findViewById<Button>(R.id.logout)
         button.setOnClickListener {
