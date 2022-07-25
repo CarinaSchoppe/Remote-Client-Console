@@ -11,8 +11,12 @@
 package de.carinasophie.minecraftremoteclientconsole.graphics
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.TableLayout
+import android.widget.TableRow
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.children
 import de.carinasophie.minecraftremoteclientconsole.R
 import de.carinasophie.minecraftremoteclientconsole.util.Player
 import de.carinasophie.minecraftremoteclientconsole.util.Utility
@@ -26,16 +30,31 @@ class PlayerSelector : AppCompatActivity() {
         Utility.chatMenuButton()
         Utility.consoleMenuButton()
         Utility.logoutButton()
-        readInClients(Utility.playersList)
         sendButton()
         Utility.refresh()
         refreshButton()
     }
 
-    private fun readInClients(playersList: List<Player>) {
+    companion object {
+        fun tableRowListener(view: View) {
+            //get the table row that was clicked
+            val tableRow = view as TableRow
+            tableRow.setBackgroundColor(R.color.green)
+            //get all tableRows of a given tableLayout
+            val tableLayout = tableRow.parent as TableLayout
+            for (tableRows in tableLayout.children) {
+                //get the tableRow that is currently selected
+                val selectedTableRow = tableRows as TableRow
+                //set the background color of the selected tableRow to white
+                if (selectedTableRow != tableRow) {
+                    selectedTableRow.setBackgroundColor(R.color.white)
+                }
+            }
 
+            val playerObject: Player = Utility.playersList.find { it.name == tableRow.getChildAt(0).toString() && it.ping.toString() == tableRow.getChildAt(7).toString() }!!
+
+        }
     }
-
 
     private fun sendButton() {
 

@@ -21,6 +21,7 @@ import com.google.gson.reflect.TypeToken
 import de.carinasophie.minecraftremoteclientconsole.R
 import de.carinasophie.minecraftremoteclientconsole.graphics.Chat
 import de.carinasophie.minecraftremoteclientconsole.graphics.Console
+import de.carinasophie.minecraftremoteclientconsole.graphics.PlayerSelector
 import de.carinasophie.minecraftremoteclientconsole.util.*
 
 object PacketInputHandler {
@@ -95,6 +96,8 @@ object PacketInputHandler {
                 Handler(Looper.getMainLooper()).post {
                     for (player in Utility.playersList) {
                         val tableRow = TableRow(Utility.activeActivity)
+                        tableRow.isClickable = true
+                        tableRow.setOnClickListener { PlayerSelector.tableRowListener(it) }
                         tableRow.layoutParams = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT)
                         tableRow.addView(TextView(Utility.activeActivity).apply {
                             text = player.name
@@ -140,7 +143,7 @@ object PacketInputHandler {
 
                         //add the row to the table
                         var table = Utility.activeActivity.findViewById<TableLayout>(R.id.tablePlayers)
-                        // deleteRows(table)
+                        deleteRows(table)
                         table?.addView(tableRow)
                     }
                 }
