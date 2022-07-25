@@ -62,16 +62,16 @@ class Login : AppCompatActivity() {
     }
 
     private fun loginButton() {
-        /* var ip = findViewById<EditText>(R.id.ip).text
-         val port = findViewById<EditText>(R.id.port).text
-         val userName = findViewById<EditText>(R.id.username).text
-         val password = findViewById<EditText>(R.id.password).text*/
-        var ip = "10.0.2.2"
-        val port = 8080
-        val userName = "test"
-        val password = "test"
+        var ip: Any = findViewById<EditText>(R.id.ip).text
+        val port = findViewById<EditText>(R.id.port).text
+        val userName = findViewById<EditText>(R.id.username).text
+        val password = findViewById<EditText>(R.id.password).text
+        /*      var ip = "10.0.2.2"
+              val port = 8080
+              val userName = "test"
+              val password = "test"*/
         val loginButton = findViewById<Button>(R.id.loginButton)
-        if (ip.equals("localhost", true))
+        if (ip == "localhost")
             ip = "10.0.2.2"
         loginButton.setOnClickListener {
             try {

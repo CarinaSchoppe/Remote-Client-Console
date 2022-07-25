@@ -94,10 +94,12 @@ object PacketInputHandler {
                 val playersList = Gson().fromJson<MutableList<Player>>(packet.data.get("players"), dataType)
                 Utility.playersList = playersList
                 Handler(Looper.getMainLooper()).post {
+                    var table = Utility.activeActivity.findViewById<TableLayout>(R.id.tablePlayers)
+                    deleteRows(table)
                     for (player in Utility.playersList) {
                         val tableRow = TableRow(Utility.activeActivity)
                         tableRow.isClickable = true
-                        tableRow.setOnClickListener { PlayerSelector.tableRowListener(it) }
+                        tableRow.setOnClickListener { PlayerSelector.tableRowListener(tableRow) }
                         tableRow.layoutParams = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT)
                         tableRow.addView(TextView(Utility.activeActivity).apply {
                             text = player.name
@@ -142,8 +144,7 @@ object PacketInputHandler {
                         })
 
                         //add the row to the table
-                        var table = Utility.activeActivity.findViewById<TableLayout>(R.id.tablePlayers)
-                        deleteRows(table)
+
                         table?.addView(tableRow)
                     }
                 }

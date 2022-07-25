@@ -38,7 +38,6 @@ object Utility {
         Thread {
             val json = JsonObject()
             Client.instance.writer.println(Packet(PacketType.REFRESH, json).createJsonPacket())
-            println("Refresh Button Pressed")
         }.start()
     }
 

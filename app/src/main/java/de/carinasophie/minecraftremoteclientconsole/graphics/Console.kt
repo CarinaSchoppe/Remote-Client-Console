@@ -55,8 +55,7 @@ class Console : AppCompatActivity() {
     }
 
     private fun sendButton() {
-        val button = findViewById<Button>(R.id.send)
-        button.setOnClickListener {
+        findViewById<Button>(R.id.send).setOnClickListener {
             val window = findViewById<EditText>(R.id.command)
             if (window.text.isNotEmpty()) {
                 val json = JsonObject()

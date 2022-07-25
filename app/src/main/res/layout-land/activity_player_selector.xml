@@ -24,8 +24,8 @@
             app:srcCompat="@drawable/background"
             android:id="@+id/imageView3"
             android:rotation="0"
-            tools:layout_editor_absoluteY="78dp"
-            tools:layout_editor_absoluteX="0dp" />
+            tools:layout_editor_absoluteY="-60dp"
+            tools:layout_editor_absoluteX="52dp" />
 
     <Button
             android:text="Send"
@@ -116,14 +116,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.54"
-            app:layout_constraintVertical_bias="0.041"
+            app:layout_constraintVertical_bias="0.0"
             android:textAlignment="center"
             style="@style/Widget.AppCompat.TextView"
             android:fontFamily="@font/archivo_black" />
 
     <EditText
-            android:layout_width="118dp"
-            android:layout_height="67dp"
+            android:layout_width="130dp"
+            android:layout_height="33dp"
             android:inputType="text"
             android:text="Reason"
             android:ems="10"
@@ -133,19 +133,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.042"
-            app:layout_constraintVertical_bias="0.456"
+            app:layout_constraintHorizontal_bias="0.041"
+            app:layout_constraintVertical_bias="0.415"
             android:fontFamily="@font/archivo_black" />
 
     <ScrollView
-            android:layout_width="567dp"
-            android:layout_height="277dp"
+            android:layout_width="535dp"
+            android:layout_height="222dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.902"
-            app:layout_constraintVertical_bias="0.604"
+            app:layout_constraintHorizontal_bias="0.887"
+            app:layout_constraintVertical_bias="0.83"
             android:background="#FFFFFF">
 
         <TableLayout
@@ -256,6 +256,19 @@
 
         </TableLayout>
     </ScrollView>
+
+    <Spinner
+            android:layout_width="136dp"
+            android:layout_height="41dp"
+            android:id="@+id/spinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:spinnerMode="dropdown"
+            android:background="@android:drawable/btn_dropdown"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.038"
+            app:layout_constraintVertical_bias="0.549" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
