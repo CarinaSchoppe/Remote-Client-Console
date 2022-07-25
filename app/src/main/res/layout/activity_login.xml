@@ -48,7 +48,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="0.079"
                 app:layout_constraintVertical_bias="0.161"
-                android:textSize="23sp" />
+                android:textSize="23sp"
+                android:autofillHints="" />
 
         <TextView
                 android:text="Minecraft Remote Console Login"
@@ -82,7 +83,8 @@
 
                 app:layout_constraintHorizontal_bias="0.091"
                 app:layout_constraintVertical_bias="0.29"
-                android:textSize="23sp" />
+                android:textSize="23sp"
+                android:autofillHints="" />
 
         <EditText
                 android:layout_width="330dp"
@@ -98,7 +100,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="0.078"
                 app:layout_constraintVertical_bias="0.431"
-                android:textSize="23sp" />
+                android:textSize="23sp"
+                android:autofillHints="" />
 
         <EditText
                 android:layout_width="331dp"
@@ -115,7 +118,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="0.095"
                 app:layout_constraintVertical_bias="0.582"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"
+                android:autofillHints="" />
 
         <Button
                 android:text="Login"
