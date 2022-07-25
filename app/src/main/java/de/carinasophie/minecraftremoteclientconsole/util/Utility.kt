@@ -18,7 +18,7 @@ import de.carinasophie.minecraftremoteclientconsole.client.Client
 import de.carinasophie.minecraftremoteclientconsole.graphics.Chat
 import de.carinasophie.minecraftremoteclientconsole.graphics.Console
 import de.carinasophie.minecraftremoteclientconsole.graphics.Login
-import de.carinasophie.minecraftremoteclientconsole.graphics.PlayerMenu
+import de.carinasophie.minecraftremoteclientconsole.graphics.PlayerSelector
 
 object Utility {
     var consoleText = """"""
@@ -35,7 +35,7 @@ object Utility {
     fun playerMenuButton() {
         val button = activeActivity.findViewById<Button>(R.id.playerMenuButton)
         button.setOnClickListener {
-            activeActivity.startActivity(Intent(activeActivity, PlayerMenu::class.java))
+            activeActivity.startActivity(Intent(activeActivity, PlayerSelector::class.java))
         }
     }
 

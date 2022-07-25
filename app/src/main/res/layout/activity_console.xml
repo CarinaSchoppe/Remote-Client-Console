@@ -96,6 +96,7 @@
             android:textSize="20sp"
             android:textColor="@color/black"
             android:textColorHighlight="#2196F3"
+            android:fontFamily="@font/archivo_black"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

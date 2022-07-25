@@ -103,7 +103,8 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintVertical_bias="0.022"
             android:textAlignment="center"
-            style="@style/Widget.AppCompat.TextView" />
+            style="@style/Widget.AppCompat.TextView"
+            android:fontFamily="@font/archivo_black" />
 
     <ScrollView
             android:id="@+id/SCROLLER_ID"

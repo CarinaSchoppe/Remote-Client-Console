@@ -16,14 +16,13 @@
             android:theme="@style/Theme.MinecraftRemoteClientConsole"
             tools:targetApi="31">
         <activity
-                android:name=".PlayerMenu"
+                android:name=".PlayerSelector"
                 android:exported="false" />
-        <!-- set the package to de.carinasophie.minecraftremoteclientconsole.graphics -->
+        <activity
+                android:name=".PlayerMenu"
+                android:exported="false" /> <!-- set the package to de.carinasophie.minecraftremoteclientconsole.graphics -->
         <activity
                 android:name=".graphics.Chat"
-                android:exported="false" />
-        <activity
-                android:name=".graphics.PlayerMenu"
                 android:exported="false" />
         <activity
                 android:name=".graphics.Console"

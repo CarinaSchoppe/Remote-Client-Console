@@ -91,8 +91,8 @@
 
     <TextView
             android:text="Minecraft Remote-Console"
-            android:layout_width="379dp"
-            android:layout_height="33dp"
+            android:layout_width="384dp"
+            android:layout_height="66dp"
             android:id="@+id/infoText"
             android:textSize="28sp"
             android:textColorHighlight="#2196F3"
@@ -104,7 +104,8 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             style="@style/Widget.AppCompat.TextView"
-            app:layout_constraintHorizontal_bias="0.467" />
+            app:layout_constraintHorizontal_bias="0.467"
+            android:fontFamily="@font/archivo_black" />
 
     <EditText
             android:layout_width="171dp"

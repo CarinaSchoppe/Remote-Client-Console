@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright Notice for MinecraftRemoteClientConsole
+  ~ Copyright (c) at Carina Sophie Schoppe 2022
+  ~ File created on 7/25/22, 11:31 AM by Carina The Latest changes made by Carina on 7/25/22, 11:31 AM All contents of "activity_player_selector.xml" are protected by copyright. The copyright law, unless expressly indicated otherwise, is
+  ~ at Carina Sophie Schoppe. All rights reserved
+  ~ Any type of duplication, distribution, rental, sale, award,
+  ~ Public accessibility or other use
+  ~ requires the express written consent of Carina Sophie Schoppe.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".graphics.PlayerSelector"
+        android:background="#DDD6D6">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/background"
+            android:id="@+id/imageView3"
+            android:rotation="0"
+            tools:layout_editor_absoluteY="78dp"
+            tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+            android:text="SEND"
+            android:layout_width="100dp"
+            android:layout_height="49dp"
+            android:id="@+id/send"
+            android:contentDescription="Sends the message"
+            app:iconPadding="10sp"
+            android:textSize="8sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.041"
+            app:layout_constraintVertical_bias="0.627" />
+
+    <Button
+            android:text="Refresh"
+            android:layout_width="88dp"
+            android:layout_height="44dp"
+            android:id="@+id/refresh"
+            android:contentDescription="Refreshes the list"
+            app:iconPadding="10sp"
+            android:textSize="8sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.041"
+            app:layout_constraintVertical_bias="0.787" />
+
+    <Button
+            android:text="Console"
+            android:layout_width="100dp"
+            android:layout_height="51dp"
+            android:id="@+id/consoleButton"
+            android:contentDescription="Opens Console Menu"
+            app:iconPadding="10sp"
+            android:textSize="8sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.025"
+            app:layout_constraintVertical_bias="0.175" />
+
+    <Button
+            android:text="Logout"
+            android:layout_width="104dp"
+            android:layout_height="50dp"
+            android:id="@+id/logout"
+            android:contentDescription="Logs out of the server"
+            app:iconPadding="10sp"
+            android:textSize="8sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.974"
+            app:layout_constraintVertical_bias="0.022" />
+
+    <Button
+            android:text="Chat"
+            android:layout_width="101dp"
+            android:layout_height="55dp"
+            android:id="@+id/chatButton"
+            android:contentDescription="Opens Chat Menu"
+            app:iconPadding="10sp"
+            android:textSize="8sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.022"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.022" />
+
+
+    <TextView
+            android:text="Minecraft Remote-Console"
+            android:layout_width="409dp"
+            android:layout_height="26dp"
+            android:id="@+id/infoText"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textColorHighlight="#2196F3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.54"
+            app:layout_constraintVertical_bias="0.041"
+            android:textAlignment="center"
+            style="@style/Widget.AppCompat.TextView"
+            android:fontFamily="@font/archivo_black" />
+
+    <EditText
+            android:layout_width="118dp"
+            android:layout_height="67dp"
+            android:inputType="text"
+            android:text="Reason"
+            android:ems="10"
+            android:id="@+id/reasonText"
+            android:background="#FFFFFF"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.022"
+            app:layout_constraintVertical_bias="0.363"
+            android:fontFamily="@font/archivo_black" />
+
+    <TableLayout
+            android:layout_width="566dp"
+            android:layout_height="337dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.903"
+            app:layout_constraintVertical_bias="0.851"
+            android:id="@+id/tablePlayers"
+            android:background="#FFFFFF">
+
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/startTableRow"
+                android:visibility="visible"
+                tools:visibility="visible"
+                android:background="#F33030"
+                android:clickable="false"
+                android:contextClickable="false">
+
+            <TextView
+                    android:text="Username"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/userNameTextView"
+                    android:visibility="visible"
+                    android:background="#C8C0C0"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:fontFamily="@font/archivo_black" />
+
+            <TextView
+                    android:text="World"
+                    android:layout_width="63dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/worldTextView"
+                    android:background="#C8C0C0"
+                    android:visibility="visible"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:fontFamily="@font/archivo_black" />
+
+            <TextView
+                    android:text="Health"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/healthTextView"
+                    android:background="#C8C0C0"
+                    android:visibility="visible"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:fontFamily="@font/archivo_black" />
+
+            <TextView
+                    android:text="Food"
+                    android:layout_width="47dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/foodTextView"
+                    android:background="#C8C0C0"
+                    android:visibility="visible"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:fontFamily="@font/archivo_black" />
+
+            <TextView
+                    android:text="Coordinates"
+                    android:layout_width="103dp"
+                    android:layout_height="wrap_content"
+                    android:background="#C8C0C0"
+                    android:id="@+id/coordinatesTextView"
+                    android:visibility="visible"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:fontFamily="@font/archivo_black" />
+
+            <TextView
+                    android:text="Gamemode"
+                    android:layout_width="91dp"
+                    android:layout_height="wrap_content"
+                    android:background="#C8C0C0"
+                    android:id="@+id/gamemodeTextView"
+                    android:visibility="visible"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:fontFamily="@font/archivo_black" />
+
+            <TextView
+                    android:text="Level"
+                    android:layout_width="54dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/levelTextView"
+                    android:background="#C8C0C0"
+                    android:visibility="visible"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:fontFamily="@font/archivo_black" />
+
+            <TextView
+                    android:text="Ping"
+                    android:layout_width="51dp"
+                    android:layout_height="19dp"
+                    android:id="@+id/pingTextView"
+                    android:background="#C8C0C0"
+                    android:visibility="visible"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:fontFamily="@font/archivo_black" />
+
+        </TableRow>
+
+    </TableLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

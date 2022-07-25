@@ -29,7 +29,6 @@ class Login : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        println(Utility.activeActivity.javaClass.name)
         var ip = findViewById<EditText>(R.id.ip).text
         val port = findViewById<EditText>(R.id.port).text
         val userName = findViewById<EditText>(R.id.username).text
