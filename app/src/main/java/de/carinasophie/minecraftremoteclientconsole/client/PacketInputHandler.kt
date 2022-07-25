@@ -13,14 +13,15 @@ package de.carinasophie.minecraftremoteclientconsole.client
 import android.content.Intent
 import android.os.Handler
 import android.os.Looper
+import android.widget.TableLayout
+import android.widget.TableRow
 import android.widget.TextView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import de.carinasophie.minecraftremoteclientconsole.R
 import de.carinasophie.minecraftremoteclientconsole.graphics.Chat
 import de.carinasophie.minecraftremoteclientconsole.graphics.Console
-import de.carinasophie.minecraftremoteclientconsole.util.Packet
-import de.carinasophie.minecraftremoteclientconsole.util.PacketType
-import de.carinasophie.minecraftremoteclientconsole.util.PopUp
-import de.carinasophie.minecraftremoteclientconsole.util.Utility
+import de.carinasophie.minecraftremoteclientconsole.util.*
 
 object PacketInputHandler {
 
@@ -86,17 +87,74 @@ object PacketInputHandler {
             PacketType.LOGOUT -> {
                 Client.instance.disconnect()
             }
+
+            PacketType.REFRESH -> {
+                val dataType = object : TypeToken<List<Player>>() {}.type
+                val playersList = Gson().fromJson<MutableList<Player>>(packet.data.get("players"), dataType)
+                Utility.playersList = playersList
+                Handler(Looper.getMainLooper()).post {
+                    for (player in Utility.playersList) {
+                        val tableRow = TableRow(Utility.activeActivity)
+                        tableRow.layoutParams = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT)
+                        tableRow.addView(TextView(Utility.activeActivity).apply {
+                            text = player.name
+                            textSize = 20f
+                            setPadding(0, 0, 0, 0)
+                        })
+                        tableRow.addView(TextView(Utility.activeActivity).apply {
+                            text = player.world
+                            textSize = 20f
+                            setPadding(0, 0, 0, 0)
+                        })
+                        tableRow.addView(TextView(Utility.activeActivity).apply {
+                            text = player.health.toString()
+                            textSize = 20f
+                            setPadding(0, 0, 0, 0)
+                        })
+                        tableRow.addView(TextView(Utility.activeActivity).apply {
+                            text = player.food.toString()
+                            textSize = 20f
+                            setPadding(0, 0, 0, 0)
+                        })
+                        tableRow.addView(TextView(Utility.activeActivity).apply {
+                            text = player.coordinates.toString()
+                            textSize = 20f
+                            setPadding(0, 0, 0, 0)
+                        })
+                        tableRow.addView(TextView(Utility.activeActivity).apply {
+                            text = player.gamemode
+                            textSize = 20f
+                            setPadding(0, 0, 0, 0)
+                        })
+
+                        tableRow.addView(TextView(Utility.activeActivity).apply {
+                            text = player.level.toString()
+                            textSize = 20f
+                            setPadding(0, 0, 0, 0)
+                        })
+                        tableRow.addView(TextView(Utility.activeActivity).apply {
+                            text = player.ping.toString()
+                            textSize = 20f
+                            setPadding(0, 0, 0, 0)
+                        })
+
+                        //add the row to the table
+                        var table = Utility.activeActivity.findViewById<TableLayout>(R.id.tablePlayers)
+                        // deleteRows(table)
+                        table?.addView(tableRow)
+                    }
+                }
+            }
             else -> {}
         }
 
     }
 
-//    private fun refresh(packet: Packet) {
-//        val myType = object : TypeToken<List<Player>>() {}.type
-//        val test = Gson().fromJson<List<Player>>(packet.data.get("players"), myType)
-//        Selection.players = test
-//        Selection.instance!!.update()
-//    }
+    private fun deleteRows(table: TableLayout) {
+        for (i in 1 until table.childCount) {
+            table.removeViewAt(i)
+        }
+    }
 
 
 }

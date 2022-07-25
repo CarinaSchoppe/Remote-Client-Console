@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".graphics.PlayerSelector"
-        android:background="#DDD6D6">
+        android:background="#DDD6D6"
+        tools:ignore="MissingDefaultResource">
 
     <ImageView
             android:layout_width="match_parent"
@@ -27,7 +28,7 @@
             tools:layout_editor_absoluteX="0dp" />
 
     <Button
-            android:text="SEND"
+            android:text="Send"
             android:layout_width="100dp"
             android:layout_height="49dp"
             android:id="@+id/send"
@@ -39,13 +40,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.041"
-            app:layout_constraintVertical_bias="0.627" />
+            app:layout_constraintVertical_bias="0.704" />
 
     <Button
             android:text="Refresh"
-            android:layout_width="88dp"
-            android:layout_height="44dp"
-            android:id="@+id/refresh"
+            android:layout_width="100dp"
+            android:layout_height="49dp"
+            android:id="@+id/refreshButton"
             android:contentDescription="Refreshes the list"
             app:iconPadding="10sp"
             android:textSize="8sp"
@@ -53,8 +54,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.041"
-            app:layout_constraintVertical_bias="0.787" />
+            app:layout_constraintHorizontal_bias="0.04"
+            app:layout_constraintVertical_bias="0.871" />
 
     <Button
             android:text="Console"
@@ -69,12 +70,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.025"
-            app:layout_constraintVertical_bias="0.175" />
+            app:layout_constraintVertical_bias="0.225" />
 
     <Button
             android:text="Logout"
-            android:layout_width="104dp"
-            android:layout_height="50dp"
+            android:layout_width="124dp"
+            android:layout_height="37dp"
             android:id="@+id/logout"
             android:contentDescription="Logs out of the server"
             app:iconPadding="10sp"
@@ -83,8 +84,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.974"
-            app:layout_constraintVertical_bias="0.022" />
+            app:layout_constraintHorizontal_bias="0.96"
+            app:layout_constraintVertical_bias="0.0" />
 
     <Button
             android:text="Chat"
@@ -132,123 +133,129 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.022"
-            app:layout_constraintVertical_bias="0.363"
+            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintVertical_bias="0.456"
             android:fontFamily="@font/archivo_black" />
 
-    <TableLayout
-            android:layout_width="566dp"
-            android:layout_height="337dp"
+    <ScrollView
+            android:layout_width="567dp"
+            android:layout_height="277dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.903"
-            app:layout_constraintVertical_bias="0.851"
-            android:id="@+id/tablePlayers"
+            app:layout_constraintHorizontal_bias="0.902"
+            app:layout_constraintVertical_bias="0.604"
             android:background="#FFFFFF">
 
-        <TableRow
+        <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/startTableRow"
-                android:visibility="visible"
-                tools:visibility="visible"
-                android:background="#F33030"
-                android:clickable="false"
-                android:contextClickable="false">
+                android:layout_height="wrap_content"
+                android:id="@+id/tablePlayers"
+                android:background="#FFFFFF">
 
-            <TextView
-                    android:text="Username"
-                    android:layout_width="95dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/userNameTextView"
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/startTableRow"
                     android:visibility="visible"
-                    android:background="#C8C0C0"
+                    tools:visibility="visible"
+                    android:background="#F33030"
                     android:clickable="false"
-                    android:editable="false"
-                    android:fontFamily="@font/archivo_black" />
+                    android:contextClickable="false">
 
-            <TextView
-                    android:text="World"
-                    android:layout_width="63dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/worldTextView"
-                    android:background="#C8C0C0"
-                    android:visibility="visible"
-                    android:clickable="false"
-                    android:editable="false"
-                    android:fontFamily="@font/archivo_black" />
+                <TextView
+                        android:text="Username"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/userNameTextView"
+                        android:visibility="visible"
+                        android:background="#C8C0C0"
+                        android:clickable="false"
+                        android:editable="false"
+                        android:fontFamily="@font/archivo_black" />
 
-            <TextView
-                    android:text="Health"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/healthTextView"
-                    android:background="#C8C0C0"
-                    android:visibility="visible"
-                    android:clickable="false"
-                    android:editable="false"
-                    android:fontFamily="@font/archivo_black" />
+                <TextView
+                        android:text="World"
+                        android:layout_width="63dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/worldTextView"
+                        android:background="#C8C0C0"
+                        android:visibility="visible"
+                        android:clickable="false"
+                        android:editable="false"
+                        android:fontFamily="@font/archivo_black" />
 
-            <TextView
-                    android:text="Food"
-                    android:layout_width="47dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/foodTextView"
-                    android:background="#C8C0C0"
-                    android:visibility="visible"
-                    android:clickable="false"
-                    android:editable="false"
-                    android:fontFamily="@font/archivo_black" />
+                <TextView
+                        android:text="Health"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/healthTextView"
+                        android:background="#C8C0C0"
+                        android:visibility="visible"
+                        android:clickable="false"
+                        android:editable="false"
+                        android:fontFamily="@font/archivo_black" />
 
-            <TextView
-                    android:text="Coordinates"
-                    android:layout_width="103dp"
-                    android:layout_height="wrap_content"
-                    android:background="#C8C0C0"
-                    android:id="@+id/coordinatesTextView"
-                    android:visibility="visible"
-                    android:clickable="false"
-                    android:editable="false"
-                    android:fontFamily="@font/archivo_black" />
+                <TextView
+                        android:text="Food"
+                        android:layout_width="47dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/foodTextView"
+                        android:background="#C8C0C0"
+                        android:visibility="visible"
+                        android:clickable="false"
+                        android:editable="false"
+                        android:fontFamily="@font/archivo_black" />
 
-            <TextView
-                    android:text="Gamemode"
-                    android:layout_width="91dp"
-                    android:layout_height="wrap_content"
-                    android:background="#C8C0C0"
-                    android:id="@+id/gamemodeTextView"
-                    android:visibility="visible"
-                    android:clickable="false"
-                    android:editable="false"
-                    android:fontFamily="@font/archivo_black" />
+                <TextView
+                        android:text="Coordinates"
+                        android:layout_width="103dp"
+                        android:layout_height="wrap_content"
+                        android:background="#C8C0C0"
+                        android:id="@+id/coordinatesTextView"
+                        android:visibility="visible"
+                        android:clickable="false"
+                        android:editable="false"
+                        android:fontFamily="@font/archivo_black" />
 
-            <TextView
-                    android:text="Level"
-                    android:layout_width="54dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/levelTextView"
-                    android:background="#C8C0C0"
-                    android:visibility="visible"
-                    android:clickable="false"
-                    android:editable="false"
-                    android:fontFamily="@font/archivo_black" />
+                <TextView
+                        android:text="Gamemode"
+                        android:layout_width="91dp"
+                        android:layout_height="wrap_content"
+                        android:background="#C8C0C0"
+                        android:id="@+id/gamemodeTextView"
+                        android:visibility="visible"
+                        android:clickable="false"
+                        android:editable="false"
+                        android:fontFamily="@font/archivo_black" />
 
-            <TextView
-                    android:text="Ping"
-                    android:layout_width="51dp"
-                    android:layout_height="19dp"
-                    android:id="@+id/pingTextView"
-                    android:background="#C8C0C0"
-                    android:visibility="visible"
-                    android:clickable="false"
-                    android:editable="false"
-                    android:fontFamily="@font/archivo_black" />
+                <TextView
+                        android:text="Level"
+                        android:layout_width="54dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/levelTextView"
+                        android:background="#C8C0C0"
+                        android:visibility="visible"
+                        android:clickable="false"
+                        android:editable="false"
+                        android:fontFamily="@font/archivo_black" />
 
-        </TableRow>
+                <TextView
+                        android:text="Ping"
+                        android:layout_width="51dp"
+                        android:layout_height="19dp"
+                        android:id="@+id/pingTextView"
+                        android:background="#C8C0C0"
+                        android:visibility="visible"
+                        android:clickable="false"
+                        android:editable="false"
+                        android:fontFamily="@font/archivo_black" />
 
-    </TableLayout>
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

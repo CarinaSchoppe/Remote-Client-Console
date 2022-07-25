@@ -11,13 +11,42 @@
 package de.carinasophie.minecraftremoteclientconsole.graphics
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import de.carinasophie.minecraftremoteclientconsole.R
+import de.carinasophie.minecraftremoteclientconsole.util.Player
+import de.carinasophie.minecraftremoteclientconsole.util.Utility
 
 
 class PlayerSelector : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_player_selector)
+        Utility.activeActivity = this
+        Utility.chatMenuButton()
+        Utility.consoleMenuButton()
+        Utility.logoutButton()
+        readInClients(Utility.playersList)
+        sendButton()
+        Utility.refresh()
+        refreshButton()
     }
+
+    private fun readInClients(playersList: List<Player>) {
+
+    }
+
+
+    private fun sendButton() {
+
+    }
+
+    private fun refreshButton() {
+        findViewById<Button>(R.id.refreshButton).setOnClickListener {
+            Utility.refresh()
+        }
+
+    }
+
+
 }

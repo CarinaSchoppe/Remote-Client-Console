@@ -37,7 +37,7 @@ class Chat : AppCompatActivity() {
             chat.setText(savedInstanceState.getString("chatText"))
         }
         sendButton()
-        Utility.logout()
+        Utility.logoutButton()
         Utility.consoleMenuButton()
         Utility.playerMenuButton()
     }

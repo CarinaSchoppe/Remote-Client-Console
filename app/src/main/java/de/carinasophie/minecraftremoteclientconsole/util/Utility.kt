@@ -13,6 +13,7 @@ package de.carinasophie.minecraftremoteclientconsole.util
 import android.content.Intent
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.JsonObject
 import de.carinasophie.minecraftremoteclientconsole.R
 import de.carinasophie.minecraftremoteclientconsole.client.Client
 import de.carinasophie.minecraftremoteclientconsole.graphics.Chat
@@ -24,12 +25,21 @@ object Utility {
     var consoleText = """"""
     var chat = """"""
     lateinit var activeActivity: AppCompatActivity
+    var playersList = mutableListOf<Player>()
 
     fun chatMenuButton() {
         val button = activeActivity.findViewById<Button>(R.id.chatButton)
         button.setOnClickListener {
             activeActivity.startActivity(Intent(activeActivity, Chat::class.java))
         }
+    }
+
+    fun refresh() {
+        Thread {
+            val json = JsonObject()
+            Client.instance.writer.println(Packet(PacketType.REFRESH, json).createJsonPacket())
+            println("Refresh Button Pressed")
+        }.start()
     }
 
     fun playerMenuButton() {
@@ -46,7 +56,7 @@ object Utility {
         }
     }
 
-    fun logout() {
+    fun logoutButton() {
         val button = activeActivity.findViewById<Button>(R.id.logout)
         button.setOnClickListener {
             Client.instance.logout()

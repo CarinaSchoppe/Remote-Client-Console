@@ -38,7 +38,7 @@ class Console : AppCompatActivity() {
             command.setText(savedInstanceState.getString("commandText"))
         }
         sendButton()
-        Utility.logout()
+        Utility.logoutButton()
         Utility.chatMenuButton()
         Utility.playerMenuButton()
     }
