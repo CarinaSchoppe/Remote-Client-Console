@@ -149,7 +149,9 @@ object PacketInputHandler {
                     }
                 }
             }
-            else -> {}
+            else -> {
+                throw Exception("Unknown packet type")
+            }
         }
 
     }

@@ -135,7 +135,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.041"
             app:layout_constraintVertical_bias="0.415"
-            android:fontFamily="@font/archivo_black" />
+            android:fontFamily="@font/archivo_black"
+            android:autofillHints="" />
 
     <ScrollView
             android:layout_width="535dp"
