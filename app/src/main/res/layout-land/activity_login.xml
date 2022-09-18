@@ -47,11 +47,12 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintVertical_bias="0.042"
+                app:layout_constraintVertical_bias="0.0"
                 android:fontFamily="@font/archivo_black"
                 android:textSize="24sp"
                 android:textColor="@color/black"
-                android:textColorHighlight="#2196F3" />
+                android:textColorHighlight="#2196F3"
+                app:layout_constraintHorizontal_bias="0.501" />
 
         <EditText
                 android:layout_width="326dp"
@@ -66,8 +67,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.089"
-                app:layout_constraintVertical_bias="0.202"
+                app:layout_constraintHorizontal_bias="0.076"
+                app:layout_constraintVertical_bias="0.144"
                 android:textSize="23sp"
                 android:autofillHints="" />
 
@@ -83,8 +84,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.077"
-                app:layout_constraintVertical_bias="0.414"
+                app:layout_constraintHorizontal_bias="0.076"
+                app:layout_constraintVertical_bias="0.331"
                 android:textSize="23sp"
                 android:autofillHints="" />
 
@@ -101,7 +102,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="0.076"
-                app:layout_constraintVertical_bias="0.622"
+                app:layout_constraintVertical_bias="0.523"
                 android:textSize="23sp"
                 android:autofillHints="" />
 
@@ -118,9 +119,24 @@
                 android:text="Password"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.07"
-                app:layout_constraintVertical_bias="0.853"
+                app:layout_constraintHorizontal_bias="0.078"
+                app:layout_constraintVertical_bias="0.711"
                 android:autofillHints="" />
+
+        <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="728dp"
+                android:layout_height="88dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                app:adSize="BANNER"
+                app:adUnitId="@string/adID"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0.948"></com.google.android.gms.ads.AdView>
 
         <Button
                 android:text="Login"

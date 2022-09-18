@@ -10,10 +10,15 @@
 
 package de.carinasophie.minecraftremoteclientconsole.graphics
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import de.carinasophie.minecraftremoteclientconsole.R
 import de.carinasophie.minecraftremoteclientconsole.client.Client
 import de.carinasophie.minecraftremoteclientconsole.util.PopUp
@@ -26,7 +31,9 @@ class Login : AppCompatActivity() {
         lateinit var client: Client
     }
 
-
+    lateinit var mAdView: AdView
+    private var TAG = "MainActivity"
+    private var mInterstitialAd: InterstitialAd? = null
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         var ip = findViewById<EditText>(R.id.ip).text
@@ -37,9 +44,12 @@ class Login : AppCompatActivity() {
         outState.putString("password", password.toString())
         outState.putString("ip", ip.toString())
         outState.putString("port", port.toString())
+
+
     }
 
 
+    @SuppressLint("VisibleForTests")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -49,12 +59,62 @@ class Login : AppCompatActivity() {
         val userName = findViewById<EditText>(R.id.username)
         val password = findViewById<EditText>(R.id.password)
 
+        var adRequestbefore = AdRequest.Builder().build()
+
+        InterstitialAd.load(this, "ca-app-pub-3940256099942544/1033173712", adRequestbefore, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                adError.toString().let { Log.d(TAG, it) }
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                Log.d(TAG, "Ad was loaded.")
+                mInterstitialAd = interstitialAd
+            }
+        })
+
+        mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
+            override fun onAdClicked() {
+                // Called when a click is recorded for an ad.
+                Log.d(TAG, "Ad was clicked.")
+            }
+
+            override fun onAdDismissedFullScreenContent() {
+                // Called when ad is dismissed.
+                Log.d(TAG, "Ad dismissed fullscreen content.")
+                mInterstitialAd = null
+            }
+
+
+            override fun onAdImpression() {
+                // Called when an impression is recorded for an ad.
+                Log.d(TAG, "Ad recorded an impression.")
+            }
+
+            override fun onAdShowedFullScreenContent() {
+                // Called when ad is shown.
+                Log.d(TAG, "Ad showed fullscreen content.")
+            }
+        }
+
+        if (mInterstitialAd != null) {
+            mInterstitialAd?.show(this)
+        } else {
+            Log.d("TAG", "The interstitial ad wasn't ready yet.")
+        }
+
+        MobileAds.initialize(this)
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
         if (savedInstanceState != null) {
             ip.setText(savedInstanceState.getString("ip"))
             port.setText(savedInstanceState.getString("port"))
             userName.setText(savedInstanceState.getString("username"))
             password.setText(savedInstanceState.getString("password"))
         }
+
+
 
         loginButton()
 
