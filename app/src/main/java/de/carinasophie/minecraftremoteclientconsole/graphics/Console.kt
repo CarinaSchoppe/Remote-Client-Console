@@ -55,7 +55,7 @@ class Console : AppCompatActivity() {
 
         InterstitialAd.load(this, "ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
-                adError.toString()?.let { Log.d(TAG, it) }
+                adError.toString().let { Log.d(TAG, it) }
                 mInterstitialAd = null
             }
 
@@ -86,7 +86,8 @@ class Console : AppCompatActivity() {
                 Log.d(TAG, "Ad showed fullscreen content.")
             }
         }
-        if (mInterstitialAd != null) {
+        if (mInterstitialAd != null && !Utility.loggedIn) {
+            Utility.loggedIn = true
             mInterstitialAd?.show(this)
         } else {
             Log.d("TAG", "The interstitial ad wasn't ready yet.")

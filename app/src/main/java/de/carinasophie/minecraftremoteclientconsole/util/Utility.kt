@@ -27,6 +27,7 @@ object Utility {
     lateinit var activeActivity: AppCompatActivity
     var playersList = mutableListOf<Player>()
 
+    var loggedIn = false
     fun chatMenuButton() {
         val button = activeActivity.findViewById<Button>(R.id.chatButton)
         button.setOnClickListener {

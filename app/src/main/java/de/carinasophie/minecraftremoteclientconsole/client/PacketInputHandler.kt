@@ -44,9 +44,11 @@ object PacketInputHandler {
             }
             PacketType.SUCCESS -> {
                 Handler(Looper.getMainLooper()).post {
-                    Utility.activeActivity.startActivity(Intent(Utility.activeActivity, Console::class.java))
+
+                Utility.activeActivity.startActivity(Intent(Utility.activeActivity, Console::class.java))
                     val console = Utility.activeActivity.findViewById<TextView>(R.id.consoleOut)
                     console?.text = Utility.consoleText
+
                 }
             }
             PacketType.LOG -> {

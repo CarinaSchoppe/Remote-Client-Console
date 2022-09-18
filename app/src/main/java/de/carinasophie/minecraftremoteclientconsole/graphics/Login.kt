@@ -59,6 +59,7 @@ class Login : AppCompatActivity() {
         val userName = findViewById<EditText>(R.id.username)
         val password = findViewById<EditText>(R.id.password)
 
+        Utility.loggedIn = false
         var adRequestbefore = AdRequest.Builder().build()
 
         InterstitialAd.load(this, "ca-app-pub-3940256099942544/1033173712", adRequestbefore, object : InterstitialAdLoadCallback() {
